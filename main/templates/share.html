@@ -1,0 +1,610 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="app-body">
+    <form action="" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+    <div class="container-fluid">
+        <ng-component _nghost-tjw-c3="">
+            <div _ngcontent-tjw-c3="" class="animated fadeIn">
+                <div _ngcontent-tjw-c3="" class="card" id="contentToConvert">
+                    <div _ngcontent-tjw-c3="" class="card-header text-center"> Certificate of Aladin cock fighting </div>
+                    <div _ngcontent-tjw-c3="" class="card-body">
+                            <div _ngcontent-tjw-c3="" class="row">
+                                <div _ngcontent-tjw-c3="" class="col-md-3">
+                                    <div _ngcontent-tjw-c3="" class="row">
+                                        <div _ngcontent-tjw-c3="" class="col-12 text-center"><img _ngcontent-tjw-c3="" id="main_image" style="width:160px;height:200px;max-width:160px;max-height:200px" src="{{path_img}}">
+                                            <div _ngcontent-tjw-c3="" class="row" style="margin-top: 10px;">
+                                                <div _ngcontent-tjw-c3="" class="col-6" style="margin: auto;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div _ngcontent-tjw-c3="" class="col-10 select-file">
+                                            <div _ngcontent-tjw-c3="" class="custom-file">
+                                            <input disabled _ngcontent-tjw-c3="" accept="image/*" class="custom-file-input disabled"name="main_image" id="main_file" onchange="readURL(this)" type="file">
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div _ngcontent-tjw-c3="" class="col-md-3">
+                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right " for="staticEmail"><font _ngcontent-tjw-c3="">*</font>ชื่อไก่:</label>
+                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><input disabled _ngcontent-tjw-c3="" class="form-control ng-untouched ng-pristine ng-valid" value="{{ name }}" placeholder="กรอกชื่อไก่" type="text" name="name"></div>
+                                    </div>
+                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail"><font _ngcontent-tjw-c3="">*</font>กิ๊บปีก:</label>
+                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><input disabled _ngcontent-tjw-c3="" class="form-control ng-untouched ng-pristine ng-valid" value="{{ reg_no }}" placeholder="กรอกกิ๊บปีก" type="text" name="reg_no"></div>
+                                    </div>
+                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail" style="padding: 0;"><font _ngcontent-tjw-c3="">*</font>เจ้าของปัจจุบัน:</label>
+                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><input disabled _ngcontent-tjw-c3="" class="form-control ng-untouched ng-pristine ng-valid" value="{{ breeder }}" placeholder="กรอกเจ้าของปัจจุบัน" type="text" name="breeder"></div>
+                                    </div>
+                                </div>
+                                <div _ngcontent-tjw-c3="" class="col-md-3">
+                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail"><font _ngcontent-tjw-c3="">*</font>เพศ:</label>
+                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><select _ngcontent-tjw-c3="" class="form-control ng-untouched ng-pristine ng-valid" name="sex_id">
+                                            <option value="1" {% if value == 'เพศผู้' %}selected{% endif %}>เพศผู้</option>
+                                            <option value="2" {% if value == 'เพศเมีย' %}selected{% endif %}>เพศเมีย</option>
+                                        </select>
+                                    </div>
+                                    </div>
+                                    <!-- <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail"><font _ngcontent-tjw-c3="">*</font>กิ๊บปีก:</label>
+                                                <div _ngcontent-tjw-c3="" class="col-sm-8"><input disabled _ngcontent-tjw-c3="" class="form-control ng-untouched ng-pristine ng-valid" value="{{ chicken_code }}" placeholder="กรอกกิ๊บปีก" type="text" name="chicken_code"></div>
+                                            </div> -->
+                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail">ผู้ปรับปรุงพันธุ์:</label>
+                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><input disabled _ngcontent-tjw-c3="" class="form-control ng-untouched ng-pristine ng-valid" value="{{ farm_name }}" placeholder="กรอกผู้ปรับปรุงพันธุ์" type="text" name="farm_name"></div>
+                                    </div>
+                                </div>
+                                <div _ngcontent-tjw-c3="" class="col-md-3">
+                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail"><font _ngcontent-tjw-c3="">*</font>วันเกิด:</label>
+                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><input disabled _ngcontent-tjw-c3="" class="form-control datepick flatpickr-input disabled ng-untouched ng-pristine ng-valid" placeholder="กรอกชื่อวันเกิด" type="text" readonly="readonly" id="birthday" name="birthday"></div>
+                                    </div>
+                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail"><font _ngcontent-tjw-c3="">*</font>วันออกใบพันธุ์ประวัติ:</label>
+                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><input disabled _ngcontent-tjw-c3="" class="form-control datepick flatpickr-input disabled ng-untouched ng-pristine ng-valid" value="{{ certificste_issued }}" placeholder="กรอกวันออกใบพันธุ์ประวัติ" type="text" readonly="readonly"id="certificste_issued" name="certificste_issued"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div _ngcontent-tjw-c3="" class="row pedi">
+                            <div _ngcontent-tjw-c3="" class="col-md-4">
+                                <div _ngcontent-tjw-c3="" class="row ">
+                                    <div _ngcontent-tjw-c3="" class="card rm-mar-bot" style="height:619px;width: 100%">
+                                        <div _ngcontent-tjw-c3="" class="card-body rm-padd ">
+                                            <div _ngcontent-tjw-c3="" class="col-12">
+                                                <div _ngcontent-tjw-c3="" class="row">
+                                                    <div _ngcontent-tjw-c3="" class="col-12 text-center">
+                                                        <img _ngcontent-tjw-c3="" id='f_image' style="width:320px;height:400px; max-width:320px;max-height:400px; " src="{{chicken_F}}">
+                                                        <div _ngcontent-tjw-c3=" " class="row " style="margin-top: 10px; ">
+                                                            <div _ngcontent-tjw-c3=" " class="col-6 " style="margin: auto; ">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div _ngcontent-tjw-c3=" " class="col-12 select-file ">
+                                                <div _ngcontent-tjw-c3=" " class="row ">
+                                                    <div _ngcontent-tjw-c3=" " class="col-9 ">
+                                                        <div _ngcontent-tjw-c3=" " class="custom-file ">
+                                                            <input disabled _ngcontent-tjw-c3=" " class="custom-file-input disabled " id="f_file" name="f_image" onchange="readURL(this)"  type="file"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr _ngcontent-tjw-c3=" ">
+                                            <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right " for="staticEmail ">ชื่อพ่อ:</label>
+                                                <div _ngcontent-tjw-c3=" " class="col-sm-8 ">
+                                                    <input disabled type="hidden" name="f_id" value="{{f_id}}">
+                                                    <input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " list="f_name_list" placeholder="กรอกชื่อพ่อ " id="f_name" type="text" value="{{F_name}}">
+                                                    <datalist id="f_name_list">
+                                                        {% for id,name,reg_no in f_list  %}
+                                                        <option data-value="{{id}}" value="{{name}}">
+                                                        {% endfor %}
+                                                    </datalist></div>
+                                            </div>
+                                            <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right " for="staticEmail ">รหัสพ่อ:</label>
+                                                <div _ngcontent-tjw-c3=" " class="col-sm-8 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " list="f_reg_no_list" id="f_reg_no" placeholder="กรอกรหัสพ่อ " type="text" value="{{F_code}}">
+                                                    <datalist id="f_reg_no_list">
+                                                        {% for id,name,reg_no in f_list  %}
+                                                        <option data-value="{{id}}" value="{{reg_no}}">
+                                                        {% endfor %}
+                                                    </datalist>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div _ngcontent-tjw-c3=" " class="row ">
+                                    <div _ngcontent-tjw-c3=" " class="card rm-mar-bot " style="height:619px ;width: 100% ">
+                                        <div _ngcontent-tjw-c3=" " class="card-body rm-padd ">
+                                            <div _ngcontent-tjw-c3=" " class="col-12 ">
+                                                <div _ngcontent-tjw-c3=" " class="row ">
+                                                    <div _ngcontent-tjw-c3=" " class="col-12 text-center ">
+                                                        <img _ngcontent-tjw-c3=" " style="width:320px;height:400px; max-width:320px;max-height:400px " id="m_image" src="{{chicken_M}}">
+                                                        <div _ngcontent-tjw-c3=" " class="row " style="margin-top: 10px; ">
+                                                            <div _ngcontent-tjw-c3=" " class="col-6 " style="margin: auto; ">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div _ngcontent-tjw-c3=" " class="col-12 select-file ">
+                                                <div _ngcontent-tjw-c3=" " class="row ">
+                                                    <div _ngcontent-tjw-c3=" " class="col-9 ">
+                                                        <div _ngcontent-tjw-c3=" " class="custom-file ">
+                                                            <input disabled _ngcontent-tjw-c3=" " class="custom-file-input disabled " id="m_file" name="m_image" onchange="readURL(this)" type="file">
+                                                                </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr _ngcontent-tjw-c3=" ">
+                                            <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right " for="staticEmail ">ชื่อแม่:</label>
+                                                <div _ngcontent-tjw-c3=" " class="col-sm-8 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="m_name" name="m_name" list="m_name_list" placeholder="กรอกชื่อแม่ " value="{{M_name}}" type="text">
+                                                    <datalist id="m_name_list">
+                                                        {% for id,name,reg_no in m_list  %}
+                                                        <option data-value="{{id}}" value="{{name}}">
+                                                        {% endfor %}
+                                                    </datalist>
+                                                </div>
+
+                                            </div>
+                                            <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right " for="staticEmail ">รหัสแม่:</label>
+                                                <div _ngcontent-tjw-c3=" " class="col-sm-8 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " list="m_reg_no_list" id="m_reg_no" name="m_reg_no" placeholder="กรอกรหัสแม่ " type="text" value="{{M_code}}">
+                                                    <datalist id="m_reg_no_list">
+                                                        {% for id,name,reg_no in m_list  %}
+                                                        <option data-value="{{id}}" value="{{reg_no}}">
+                                                        {% endfor %}
+                                                    </datalist>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div _ngcontent-tjw-c3=" " class="col-md-4 ">
+                                <div _ngcontent-tjw-c3=" " class="row ">
+                                    <div _ngcontent-tjw-c3=" " class="card rm-mar-bot " style="height:307px;width: 100% ">
+                                        <div _ngcontent-tjw-c3=" " class="card-body rm-padd ">
+                                            <div _ngcontent-tjw-c3=" " class="col-12 ">
+                                                <div _ngcontent-tjw-c3=" " class="row ">
+                                                    <div _ngcontent-tjw-c3=" " class="col-5 text-right ">
+                                                        <img _ngcontent-tjw-c3=" " style="width:160px;height:200px;max-width:160px;max-height:200px; " id="ff_image" src="{{chicken_FF}}"></div>
+                                                    <div _ngcontent-tjw-c3=" " class="col-7 ">
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row ">
+                                                            <div _ngcontent-tjw-c3=" " class="col-md-12 text-center "><label _ngcontent-tjw-c3=" " class="col-sm-12 col-form-label name-g " for="staticEmail ">ชื่อพ่อ:</label></div>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-12 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="ff_name" name="ff_name" placeholder="กรอกชื่อพ่อ " type="text" value="{{FF_name}}"></div>
+                                                        </div>
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row ">
+                                                            <div _ngcontent-tjw-c3=" " class="col-md-12 text-center "><label _ngcontent-tjw-c3=" " class="col-sm-12 col-form-label name-g " for="staticEmail ">รหัสพ่อ:</label></div>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-12 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="ff_reg_no" name="ff_reg_no" placeholder="กรอกรหัสพ่อ " type="text" value="{{FF_code}}"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div _ngcontent-tjw-c3=" " class="row ">
+                                                <div _ngcontent-tjw-c3=" " class="col-9 select-file ">
+                                                    <div _ngcontent-tjw-c3=" " class="custom-file ">
+                                                        <input disabled _ngcontent-tjw-c3=" " class="custom-file-input disabled " name="ff_image" id="ff_file" onchange="readURL(this)" type="file">
+                                                                </div>
+                                                </div>
+                                               </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div _ngcontent-tjw-c3=" " class="row ">
+                                    <div _ngcontent-tjw-c3=" " class="card rm-mar-bot " style="height:307px;width: 100% ">
+                                        <div _ngcontent-tjw-c3=" " class="card-body rm-padd ">
+                                            <div _ngcontent-tjw-c3=" " class="col-12 ">
+                                                <div _ngcontent-tjw-c3=" " class="row ">
+                                                    <div _ngcontent-tjw-c3=" " class="col-5 text-right ">
+                                                        <img _ngcontent-tjw-c3=" " style="width:160px;height:200px;max-width:160px;max-height:200px; " id="fm_image" src="{{chicken_FM}}"></div>
+                                                    <div _ngcontent-tjw-c3=" " class="col-7 ">
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row ">
+                                                            <div _ngcontent-tjw-c3=" " class="col-md-12 text-center "><label _ngcontent-tjw-c3=" " class="col-sm-12 col-form-label name-g " for="staticEmail ">ชื่อแม่:</label></div>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-12 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="fm_name" name="fm_name" placeholder="กรอกชื่อแม่ " type="text" value="{{FM_name}}"></div>
+                                                        </div>
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row ">
+                                                            <div _ngcontent-tjw-c3=" " class="col-md-12 text-center "><label _ngcontent-tjw-c3=" " class="col-sm-12 col-form-label name-g " for="staticEmail ">รหัสแม่:</label></div>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-12 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="fm_reg_no" name="fm_reg_no" placeholder="กรอกรหัอแม่ " type="text" value="{{FM_code}}"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div _ngcontent-tjw-c3=" " class="row ">
+                                                <div _ngcontent-tjw-c3=" " class="col-9 select-file ">
+                                                    <div _ngcontent-tjw-c3=" " class="custom-file ">
+                                                        <input disabled _ngcontent-tjw-c3=" " class="custom-file-input disabled " name="fm_image" id="fm_file" onchange="readURL(this)" type="file">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div _ngcontent-tjw-c3=" " class="row ">
+                                    <div _ngcontent-tjw-c3=" " class="card rm-mar-bot " style="height:307px;width: 100% ">
+                                        <div _ngcontent-tjw-c3=" " class="card-body rm-padd ">
+                                            <div _ngcontent-tjw-c3=" " class="col-12 ">
+                                                <div _ngcontent-tjw-c3=" " class="row ">
+                                                    <div _ngcontent-tjw-c3=" " class="col-5 text-right ">
+                                                        <img _ngcontent-tjw-c3=" " style="width:160px;height:200px;max-width:160px;max-height:200px; " id="mf_image" src="{{chicken_MF}}"></div>
+                                                    <div _ngcontent-tjw-c3=" " class="col-7 ">
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row ">
+                                                            <div _ngcontent-tjw-c3=" " class="col-md-12 text-center "><label _ngcontent-tjw-c3=" " class="col-sm-12 col-form-label name-g " for="staticEmail ">ชื่อพ่อ:</label></div>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-12 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="mf_name" name="mf_name" placeholder="กรอกชื่อพ่อ " type="text" value="{{MF_name}}"></div>
+                                                        </div>
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row ">
+                                                            <div _ngcontent-tjw-c3=" " class="col-md-12 text-center "><label _ngcontent-tjw-c3=" " class="col-sm-12 col-form-label name-g " for="staticEmail ">รหัสพ่อ:</label></div>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-12 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="mf_reg_no" name="mf_reg_no" placeholder="กรอกรหัสพ่อ " type="text" value="{{MF_code}}"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div _ngcontent-tjw-c3=" " class="row ">
+                                                <div _ngcontent-tjw-c3=" " class="col-9 select-file ">
+                                                    <div _ngcontent-tjw-c3=" " class="custom-file ">
+                                                        <input disabled _ngcontent-tjw-c3=" " name="mf_image" class="custom-file-input disabled " id="mf_file" onchange="readURL(this)" type="file">
+                                                    </div>
+                                                </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div _ngcontent-tjw-c3=" " class="row ">
+                                    <div _ngcontent-tjw-c3=" " class="card rm-mar-bot " style="height:307px;width: 100% ">
+                                        <div _ngcontent-tjw-c3=" " class="card-body rm-padd ">
+                                            <div _ngcontent-tjw-c3=" " class="col-12 ">
+                                                <div _ngcontent-tjw-c3=" " class="row ">
+                                                    <div _ngcontent-tjw-c3=" " class="col-5 text-right ">
+                                                        <img _ngcontent-tjw-c3=" " style="width:160px;height:200px;max-width:160px;max-height:200px; " id="mm_image" src="{{chicken_MM}}"></div>
+                                                    <div _ngcontent-tjw-c3=" " class="col-7 ">
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row ">
+                                                            <div _ngcontent-tjw-c3=" " class="col-md-12 text-center "><label _ngcontent-tjw-c3=" " class="col-sm-12 col-form-label name-g " for="staticEmail ">ชื่อแม่:</label></div>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-12 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="mm_name" name="mm_name" placeholder="กรอกชื่อพ่อ " type="text" value="{{MM_name}}"></div>
+                                                        </div>
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row ">
+                                                            <div _ngcontent-tjw-c3=" " class="col-md-12 text-center "><label _ngcontent-tjw-c3=" " class="col-sm-12 col-form-label name-g " for="staticEmail ">รหัสแม่:</label></div>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-12 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="mm_reg_no" name="mm_reg_no" placeholder="กรอกรหัสพ่อ " type="text" value="{{MM_code}}"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div _ngcontent-tjw-c3=" " class="row ">
+                                                <div _ngcontent-tjw-c3=" " class="col-9 select-file ">
+                                                    <div _ngcontent-tjw-c3=" " class="custom-file ">
+                                                        <input disabled _ngcontent-tjw-c3=" " name="mm_image" class="custom-file-input disabled " id="mm_file " type="file">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div _ngcontent-tjw-c3=" " class="col-md-4 ">
+                                <div _ngcontent-tjw-c3=" " class="row ">
+                                    <div _ngcontent-tjw-c3=" " class="card rm-mar-bot " style="height:150px;width: 100% ">
+                                        <div _ngcontent-tjw-c3=" " class="card-body rm-padd rd-mar-bot ">
+                                            <div _ngcontent-tjw-c3=" " class="col-12 ">
+                                                <div _ngcontent-tjw-c3=" " class="row ">
+                                                    <div _ngcontent-tjw-c3=" " class="col-2 text-left "><img _ngcontent-tjw-c3=" " id="fff_image" style="width:80px;height:100px; max-width:80px;max-height:100px; " src="{{chicken_FFF}}"></div>
+                                                    <div _ngcontent-tjw-c3=" " class="col-10 ">
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right name-g " for="staticEmail ">ชื่อพ่อ:</label>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-9 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="fff_name" name="fff_name" placeholder="กรอกชื่อพ่อ " value='{{FFF_name}}' type="text "></div>
+                                                        </div>
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right name-g " for="staticEmail ">รหัสพ่อ:</label>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-9 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="fff_reg_no" name="fff_code" placeholder="กรอกรหัสพ่อ " value='{{FFF_code}}' type="text "></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div _ngcontent-tjw-c3=" " class="row ">
+                                                <div _ngcontent-tjw-c3=" " class="col-9 select-file ">
+                                                    <div _ngcontent-tjw-c3=" " class="custom-file ">
+                                                        <input disabled _ngcontent-tjw-c3=" " name="fff_image" class="custom-file-input disabled " id="fff_file" onchange="readURL(this)" type="file">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div _ngcontent-tjw-c3=" " class="row ">
+                                    <div _ngcontent-tjw-c3=" " class="card rm-mar-bot " style="height:150px;width: 100% ">
+                                        <div _ngcontent-tjw-c3=" " class="card-body rm-padd rd-mar-bot ">
+                                            <div _ngcontent-tjw-c3=" " class="col-12 ">
+                                                <div _ngcontent-tjw-c3=" " class="row ">
+                                                    <div _ngcontent-tjw-c3=" " class="col-2 text-left "><img _ngcontent-tjw-c3=" " id="ffm_image" style="width:80px;height:100px; max-width:80px;max-height:100px; " src="{{chicken_FFM}}"></div>
+                                                    <div _ngcontent-tjw-c3=" " class="col-10 ">
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right name-g " for="staticEmail ">ชื่อพ่อ:</label>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-9 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="ffm_name" name="ffm_name" placeholder="กรอกชื่อพ่อ " value='{{FFM_name}}' type="text "></div>
+                                                        </div>
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right name-g " for="staticEmail ">รหัสพ่อ:</label>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-9 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="ffm_reg_no" name="ffm_code" placeholder="กรอกรหัสพ่อ " value='{{FFM_code}}' type="text "></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div _ngcontent-tjw-c3=" " class="row ">
+                                                <div _ngcontent-tjw-c3=" " class="col-9 select-file ">
+                                                    <div _ngcontent-tjw-c3=" " class="custom-file ">
+                                                        <input disabled _ngcontent-tjw-c3=" " name="ffm_image" class="custom-file-input disabled " id="ffm_file" onchange="readURL(this)" type="file">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div _ngcontent-tjw-c3=" " class="row ">
+                                    <div _ngcontent-tjw-c3=" " class="card rm-mar-bot " style="height:150px;width: 100% ">
+                                        <div _ngcontent-tjw-c3=" " class="card-body rm-padd rd-mar-bot ">
+                                            <div _ngcontent-tjw-c3=" " class="col-12 ">
+                                                <div _ngcontent-tjw-c3=" " class="row ">
+                                                    <div _ngcontent-tjw-c3=" " class="col-2 text-left "><img _ngcontent-tjw-c3=" " id="fmf_image" style="width:80px;height:100px; max-width:80px;max-height:100px; " src="{{chicken_FMF}}"></div>
+                                                    <div _ngcontent-tjw-c3=" " class="col-10 ">
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right name-g " for="staticEmail ">ชื่อพ่อ:</label>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-9 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="fmf_name" name="fmf_name" placeholder="กรอกชื่อพ่อ " value='{{FMF_name}}' type="text "></div>
+                                                        </div>
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right name-g " for="staticEmail ">รหัสพ่อ:</label>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-9 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="fmf_reg_no" name="fmf_code" placeholder="กรอกรหัสพ่อ " value='{{FMF_code}}' type="text "></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div _ngcontent-tjw-c3=" " class="row ">
+                                                <div _ngcontent-tjw-c3=" " class="col-9 select-file ">
+                                                    <div _ngcontent-tjw-c3=" " class="custom-file ">
+                                                        <input disabled _ngcontent-tjw-c3=" " name="fmf_image" class="custom-file-input disabled " id="fmf_file" onchange="readURL(this)" type="file">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div _ngcontent-tjw-c3=" " class="row ">
+                                    <div _ngcontent-tjw-c3=" " class="card rm-mar-bot " style="height:150px;width: 100% ">
+                                        <div _ngcontent-tjw-c3=" " class="card-body rm-padd rd-mar-bot ">
+                                            <div _ngcontent-tjw-c3=" " class="col-12 ">
+                                                <div _ngcontent-tjw-c3=" " class="row ">
+                                                    <div _ngcontent-tjw-c3=" " class="col-2 text-left "><img _ngcontent-tjw-c3=" " id="fmm_image" style="width:80px;height:100px; max-width:80px;max-height:100px; " src="{{FMM}}"></div>
+                                                    <div _ngcontent-tjw-c3=" " class="col-10 ">
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right name-g " for="staticEmail ">ชื่อพ่อ:</label>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-9 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " name="fmm_name" placeholder="กรอกชื่อพ่อ " value='{{FMM_name}}' type="text "></div>
+                                                        </div>
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right name-g " for="staticEmail ">รหัสพ่อ:</label>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-9 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " name="fmm_code" placeholder="กรอกรหัสพ่อ " value='{{FMM_code}}' type="text "></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div _ngcontent-tjw-c3=" " class="row ">
+                                                <div _ngcontent-tjw-c3=" " class="col-9 select-file ">
+                                                    <div _ngcontent-tjw-c3=" " class="custom-file ">
+                                                        <input disabled _ngcontent-tjw-c3=" " name="fmm_image" class="custom-file-input disabled " id="fmm_file" onchange="readURL(this)" type="file">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div _ngcontent-tjw-c3=" " class="row ">
+                                    <div _ngcontent-tjw-c3=" " class="card rm-mar-bot " style="height:150px;width: 100% ">
+                                        <div _ngcontent-tjw-c3=" " class="card-body rm-padd rd-mar-bot ">
+                                            <div _ngcontent-tjw-c3=" " class="col-12 ">
+                                                <div _ngcontent-tjw-c3=" " class="row ">
+                                                    <div _ngcontent-tjw-c3=" " class="col-2 text-left "><img _ngcontent-tjw-c3=" " id="mff_image" style="width:80px;height:100px; max-width:80px;max-height:100px; " src="{{chicken_MFF}}"></div>
+                                                    <div _ngcontent-tjw-c3=" " class="col-10 ">
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right name-g " for="staticEmail ">ชื่อพ่อ:</label>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-9 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="mff_name" name="mff_name" placeholder="กรอกชื่อพ่อ " value='{{MFF_name}}' type="text "></div>
+                                                        </div>
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right name-g " for="staticEmail ">รหัสพ่อ:</label>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-9 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="mff_reg_no" name="mff_code" placeholder="กรอกรหัสพ่อ " value='{{MFF_code}}' type="text "></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div _ngcontent-tjw-c3=" " class="row ">
+                                                <div _ngcontent-tjw-c3=" " class="col-9 select-file ">
+                                                    <div _ngcontent-tjw-c3=" " class="custom-file ">
+                                                        <input disabled _ngcontent-tjw-c3=" " name="mff_image" class="custom-file-input disabled " id="mff_file" onchange="readURL(this)" type="file">
+                                                        
+                                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div _ngcontent-tjw-c3=" " class="row ">
+                                    <div _ngcontent-tjw-c3=" " class="card rm-mar-bot " style="height:150px;width: 100% ">
+                                        <div _ngcontent-tjw-c3=" " class="card-body rm-padd rd-mar-bot ">
+                                            <div _ngcontent-tjw-c3=" " class="col-12 ">
+                                                <div _ngcontent-tjw-c3=" " class="row ">
+                                                    <div _ngcontent-tjw-c3=" " class="col-2 text-left "><img _ngcontent-tjw-c3=" " id="mfm_image" style="width:80px;height:100px; max-width:80px;max-height:100px; " src="{{chicken_MFM}}"></div>
+                                                    <div _ngcontent-tjw-c3=" " class="col-10 ">
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right name-g " for="staticEmail ">ชื่อพ่อ:</label>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-9 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="mfm_name" name="mfm_name" placeholder="กรอกชื่อพ่อ " value='{{MFM_name}}' type="text "></div>
+                                                        </div>
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right name-g " for="staticEmail ">รหัสพ่อ:</label>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-9 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="mfm_reg_no" name="mfm_code" placeholder="กรอกรหัสพ่อ " value='{{MFM_code}}' type="text "></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div _ngcontent-tjw-c3=" " class="row ">
+                                                <div _ngcontent-tjw-c3=" " class="col-9 select-file ">
+                                                    <div _ngcontent-tjw-c3=" " class="custom-file ">
+                                                        <input disabled _ngcontent-tjw-c3=" " name="mfm_image" class="custom-file-input disabled " id="mfm_file" onchange="readURL(this)" type="file">
+                                                        
+                                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div _ngcontent-tjw-c3=" " class="row ">
+                                    <div _ngcontent-tjw-c3=" " class="card rm-mar-bot " style="height:150px;width: 100% ">
+                                        <div _ngcontent-tjw-c3=" " class="card-body rm-padd rd-mar-bot ">
+                                            <div _ngcontent-tjw-c3=" " class="col-12 ">
+                                                <div _ngcontent-tjw-c3=" " class="row ">
+                                                    <div _ngcontent-tjw-c3=" " class="col-2 text-left "><img _ngcontent-tjw-c3=" " id="mmf_image" style="width:80px;height:100px; max-width:80px;max-height:100px; " src="{{chicken_MMF}}"></div>
+                                                    <div _ngcontent-tjw-c3=" " class="col-10 ">
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right name-g " for="staticEmail ">ชื่อพ่อ:</label>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-9 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="mmf_name" name="mmf_name" placeholder="กรอกชื่อพ่อ " value='{{MMF_name}}' type="text "></div>
+                                                        </div>
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right name-g " for="staticEmail ">รหัสพ่อ:</label>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-9 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="mmf_reg_no" name="mmf_code" placeholder="กรอกรหัสพ่อ " value='{{MMF_code}}' type="text "></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div _ngcontent-tjw-c3=" " class="row ">
+                                                <div _ngcontent-tjw-c3=" " class="col-9 select-file ">
+                                                    <div _ngcontent-tjw-c3=" " class="custom-file ">
+                                                        <input disabled _ngcontent-tjw-c3=" " name="mmf_image" class="custom-file-input disabled " id="mmf_file" onchange="readURL(this)" type="file">
+                                                            </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div _ngcontent-tjw-c3=" " class="row ">
+                                    <div _ngcontent-tjw-c3=" " class="card rm-mar-bot " style="height:150px;width: 100% ">
+                                        <div _ngcontent-tjw-c3=" " class="card-body rm-padd rd-mar-bot ">
+                                            <div _ngcontent-tjw-c3=" " class="col-12 ">
+                                                <div _ngcontent-tjw-c3=" " class="row ">
+                                                    <div _ngcontent-tjw-c3=" " class="col-2 text-left "><img _ngcontent-tjw-c3=" " id="mmm_image" style="width:80px;height:100px; max-width:80px;max-height:100px; " src="{{chicken_MMM}}"></div>
+                                                    <div _ngcontent-tjw-c3=" " class="col-10 ">
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right name-g " for="staticEmail ">ชื่อพ่อ:</label>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-9 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="mmm_name" name="mmm_name" placeholder="กรอกชื่อพ่อ " value='{{MMM_name}}' type="text "></div>
+                                                        </div>
+                                                        <div _ngcontent-tjw-c3=" " class="form-group row "><label _ngcontent-tjw-c3=" " class="col-sm-3 col-form-label text-right name-g " for="staticEmail ">รหัสพ่อ:</label>
+                                                            <div _ngcontent-tjw-c3=" " class="col-sm-9 "><input disabled _ngcontent-tjw-c3=" " class="form-control ng-untouched ng-pristine ng-valid " id="mmm_reg_no" name="mmm_code" placeholder="กรอกรหัสพ่อ " value='{{MMM_code}}' type="text "></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div _ngcontent-tjw-c3=" " class="row ">
+                                                <div _ngcontent-tjw-c3=" " class="col-9 select-file ">
+                                                    <div _ngcontent-tjw-c3=" " class="custom-file ">
+                                                        <input disabled _ngcontent-tjw-c3=" " name="mmm_image" class="custom-file-input disabled " id="mmm_file" onchange="readURL(this)" type="file">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div _ngcontent-tjw-c3=" " class="row " style="margin-bottom: 1% ">
+                    <div _ngcontent-tjw-c3=" " class="col-12 text-center "><button _ngcontent-tjw-c3=" " class="btn btn-primary " type="submit"><i _ngcontent-tjw-c3=" " class="fa fa-save
+                                                                    "></i>&nbsp;บันทึก </button>&nbsp; <button _ngcontent-tjw-c3=" " class="btn btn-danger " type="button"><i _ngcontent-tjw-c3=" " class="fa fa-close "></i>&nbsp;ยกเลิก </button>&nbsp;
+                    </div>
+                </div>
+            </div>
+        </ng-component>
+    </div>
+</form>
+</div>
+<script type="application/json" id="image_dict">{{ image_dict|safe }}</script>
+<script type="application/json" id="reg_no_dict">{{ reg_no_dict|safe }}</script>
+<script type="application/json" id="name_dict">{{ name_dict|safe }}</script>
+<script type="application/json" id="f_id">{{ f_id|safe }}</script>
+<script type="application/json" id="m_id">{{ m_id|safe }}</script>
+<script>
+    config1 = 
+    {
+        altinput disabled: true,
+        altFormat: "F j, Y",
+        dateFormat: "Y-m-d",
+        defaultDate:"[{{birthday}}]"
+    }
+    config2 = 
+    {
+        altinput disabled: true,
+        altFormat: "F j, Y",
+        dateFormat: "Y-m-d",
+        defaultDate:"[{{certificste_issued}}]"
+    }
+    flatpickr("#birthday", config1);
+    flatpickr("#certificste_issued", config2);
+
+</script>
+<script>
+    var clearButtons = document.querySelectorAll("button[id*='_del']");
+
+    // add an event listener to each button
+    clearButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        // get the file input disabled element associated with this button
+        var fileId = button.id.replace("_del", "_file");
+        var imgfileId = button.id.replace("_del", "_image");
+        var fileinput disabled = document.getElementById(fileId);
+        var imageinput disabled = document.getElementById(imgfileId);
+
+        // clear the file input disabled
+        fileinput disabled.value = "";
+        imageinput disabled.src = "/media/default.png";
+    });
+    });
+</script>
+<script>
+    var image_dict = JSON.parse(document.getElementById('image_dict').textContent);
+var reg_no_dict = JSON.parse(document.getElementById('reg_no_dict').textContent);
+var name_dict = JSON.parse(document.getElementById('name_dict').textContent);
+var f_id = JSON.parse(document.getElementById('f_id').textContent);
+var m_id = JSON.parse(document.getElementById('m_id').textContent);
+
+$(document).ready(function() {
+  $('input disabled[id^="f"], input disabled[id^="m"]').on('input disabled', function() {
+    var input disabledId = this.id;
+    var regNo = $('#' + input disabledId.replace(/_reg_no|_name/, '') + '_reg_no').val();
+    var name = $('#' + input disabledId.replace(/_name|_reg_no/, '') + '_name').val();
+    var value = null;
+    // Look up the value in the appropriate dictionary based on the input disabled ID
+    if (input disabledId.indexOf('reg_no') !== -1) {
+        // 'reg_no' is in the input disabledId
+        selectedOption = $('#' + input disabledId.replace(/_reg_no|_name/, '') + '_reg_no' + '_list option[value="' + regNo + '"]');
+      } else {
+        // 'reg_no' is not in the input disabledId
+        selectedOption = $('#' + input disabledId.replace(/_name|_reg_no/, '') + '_name' + '_list option[value="' + name + '"]');
+      }
+    value = selectedOption.data('value');
+    // Update the appropriate input disabled fields based on the looked-up value
+    if (value) {
+      $('#' + input disabledId.replace(/_name|_reg_no/, '') + '_image').attr('src', image_dict[value] || '/media/default.png');
+      $('#' + input disabledId.replace(/_name|_reg_no/, '') + '_reg_no').val(reg_no_dict[value] || '-');
+      $('#' + input disabledId.replace(/_name|_reg_no/, '') + '_name').val(name_dict[value] || '-');
+
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'f' + '_image').attr('src', image_dict[f_id[value]] || '/media/default.png');
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'f' + '_reg_no').val(reg_no_dict[f_id[value]] || '-');
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'f' + '_name').val(name_dict[f_id[value]] || '-');
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'm'+ '_image').attr('src', image_dict[m_id[value]] || '/media/default.png');
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'm'+ '_reg_no').val(reg_no_dict[m_id[value]] || '-');
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'm'+ '_name').val(name_dict[m_id[value]] || '-');
+
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'ff' + '_image').attr('src', image_dict[f_id[f_id[value]]] || '/media/default.png');
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'ff' + '_reg_no').val(reg_no_dict[f_id[f_id[value]]] || '-');
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'ff' + '_name').val(name_dict[f_id[f_id[value]]] || '-');
+
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'fm' + '_image').attr('src', image_dict[m_id[f_id[value]]] || '/media/default.png');
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'fm' + '_reg_no').val(reg_no_dict[m_id[f_id[value]]] || '-');
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'fm' + '_name').val(name_dict[m_id[f_id[value]]] || '-');
+
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'mf'+ '_image').attr('src', image_dict[f_id[m_id[value]]] || '/media/default.png');
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'mf'+ '_reg_no').val(reg_no_dict[f_id[m_id[value]]] || '-');
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'mf'+ '_name').val(name_dict[f_id[m_id[value]]] || '-');
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'mm'+ '_image').attr('src', image_dict[m_id[m_id[value]]] || '/media/default.png');
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'mm'+ '_reg_no').val(reg_no_dict[m_id[m_id[value]]] || '-');
+      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'mm'+ '_name').val(name_dict[m_id[m_id[value]]] || '-');
+
+    }
+  });
+});
+  </script>
+  <script>
+    function readURL(input disabled) {
+  if (input disabled.files && input disabled.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $('#'+ input disabled.id.replace(/_file|_reg_no/, '') + '_image').attr('src', e.target.result).width(150).height(200);
+    };
+
+    reader.readAsDataURL(input disabled.files[0]);
+  }
+}
+  </script>
+{% endblock content %}

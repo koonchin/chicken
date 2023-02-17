@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://127.0.0.1:8888/import?id=3433 -->
+<html class="">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--<base href="/">-->
+    <base href=".">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="http://127.0.0.1:8888/assets/img/icon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" integrity="sha512-2bMhOkE/ACz21dJT8zBOMgMecNxx0d37NND803ExktKiKdSzdwn+L7i9fdccw/3V06gM/DBWKbYmQvKMdAA9Nw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>ซุ้มไก่ชนอาลาดิน ด่านช้าง สุพรรณบุรี</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        // Shared ID
+        gtag('config', 'UA-118965717-3');
+        // Angular ID
+        gtag('config', 'UA-118965717-4');
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</head>
+<body class="app header-fixed" ng-version="7.2.16" style="padding-right: 0px;">
+        <header class="app-header navbar">
+            <a class="navbar-brand" href="http://127.0.0.1:8888/#">
+                {% comment %} <img class="navbar-brand-full" src="./ซุ้มไก่ชนอาลาดิน ด่านช้าง สุพรรณบุรี_files/logo1.png" width="auto" height="40" alt="CoreUI Logo"> {% endcomment %}
+                <img class="navbar-brand-minimized" src="./ซุ้มไก่ชนอาลาดิน ด่านช้าง สุพรรณบุรี_files/logo1.png" width="30" height="30" alt="CoreUI Logo">
+            </a>
+            <ul class="nav navbar-nav d-md-down-none">
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="/dashboard">
+                        <i class="fa fa-home">
+
+                        </i>&nbsp;หน้าหลัก</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="/list">
+                        <i class="fa fa-list">
+
+                    </i>&nbsp;ข้อมูลใบพันธุ์ประวัติ
+                    </a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="/insert">
+                        <i class="fa fa-plus">
+
+                        </i>&nbsp;เพิ่มข้อมูลใบพันธุ์ประวัติ
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+                {% comment %} <li class="nav-item d-md-down-none">
+                    <a class="nav-link">ผู้ดูแลระบบ</a>
+                </li> {% endcomment %}
+                {% comment %} <li class="nav-item dropdown" dropdown="" placement="bottom right" ng-reflect-placement="bottom right">
+                    <a aria-haspopup="true" class="nav-link" data-toggle="dropdown" dropdowntoggle="" role="button">
+                        <img class="img-avatar" src="./ซุ้มไก่ชนอาลาดิน ด่านช้าง สุพรรณบุรี_files/admin.jpg"></a>
+                </li> {% endcomment %}
+            </ul>
+        </header>
+        <div class="mt-5 pt-4">
+            {% if messages %}
+                {% for message in messages %}
+                <div id="msg" class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                  {{ message }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                {% endfor %}
+            {% endif %}
+            </div>
+            <script>
+                setTimeout(function(){
+                    if ($('#msg').length > 0) {
+                        $('#msg').remove();
+                    }
+                }, 2000)    // 2000 millisecond
+            </script>
+        {% block content %}{% endblock content %}
+</body>
+
+</html>
