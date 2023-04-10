@@ -9,7 +9,13 @@ import os,json
 # Create your views here.
 
 def dashboard(req):
-    return render(req,'dashboard.html')
+    task = 'SELECT COUNT(*), COUNT(CASE WHEN sex_id = 1 THEN 1 END), COUNT(CASE WHEN sex_id = 2 THEN 1 END) FROM chicken'
+    result = db.query(task)
+    result= list(result.fetchone())
+    context = {
+        "object":result
+    }
+    return render(req,'dashboard.html',context=context)
 
 def insert(req):
     if req.method == 'GET':
@@ -60,13 +66,13 @@ def insert(req):
                 image_task = f' "/media/{filename}"'
         except Exception as E:
             print(E)
-        if req.POST.get("farm_name"):
-            farm_name = f"'{req.POST.get('farm_name')}'"
+        if req.POST.get("breeder"):
+            breeder = f"'{req.POST.get('breeder')}'"
         else:
-            farm_name = "NULL"
+            breeder = "NULL"
         # chicken task insert
-        task = f'''insert into chicken values (0, "{req.POST.get("name")}", {farm_name}, "{req.POST.get("reg_no")}", 
-        "{req.POST.get("sex_id")}", "{req.POST.get("birthday")}", "{req.POST.get("reg_no")}", "{req.POST.get("breeder")}", 
+        task = f'''insert into chicken values (0, "{req.POST.get("name")}", "{req.POST.get("farm_name")}", "{req.POST.get("reg_no")}", 
+        "{req.POST.get("sex_id")}", "{req.POST.get("birthday")}", "{req.POST.get("reg_no")}", {breeder}, 
         "{req.POST.get("certificste_issued")}", {image_task}, null, null)'''
         db.query_commit(task)
 
@@ -264,21 +270,8 @@ def edit(req,id):
         return render(req,'edit.html',context=context)
     else:
         # file_keys = req.FILES.keys()
-        file_keys = req.POST.keys()
-
-        main_key_list =[
-            "name",
-            "reg_no",
-            "breeder",
-            "birthday",
-            "certificste_issued",
-            "farm_name",
-            "chicken_code",
-            "sex_id",
-        ]
         try:
             if req.FILES['main_image']:
-                print(req.FILES['main_image'])
                 image_path = get_image_folder(id)
                 myfile = req.FILES.getlist('main_image')
                 for i in myfile:
@@ -473,7 +466,7 @@ def listPage(req):
 
 def view_file(req,id):
     pdf = write_pdf(id)
-    return redirect(f'/media/{pdf}')
+    return redirect(f'/media/{id}.pdf')
 
 def open_file(request, id):
     path = write_pdf(id)

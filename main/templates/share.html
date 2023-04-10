@@ -3,7 +3,7 @@
 <div class="app-body">
     <form action="" enctype="multipart/form-data" method="post">
         {% csrf_token %}
-    <div class="container-fluid">
+    <div class="container-fluid" style="width:98vw;">
         <ng-component _nghost-tjw-c3="">
             <div _ngcontent-tjw-c3="" class="animated fadeIn">
                 <div _ngcontent-tjw-c3="" class="card" id="contentToConvert">
@@ -26,36 +26,33 @@
                                     </div>
                                 </div>
                                 <div _ngcontent-tjw-c3="" class="col-md-3">
-                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right " for="staticEmail"><font _ngcontent-tjw-c3="">*</font>ชื่อไก่:</label>
-                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><input disabled _ngcontent-tjw-c3="" class="form-control ng-untouched ng-pristine ng-valid" value="{{ name }}" placeholder="กรอกชื่อไก่" type="text" name="name"></div>
+                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right " for="staticEmail">ชื่อไก่:</label>
+                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><label _ngcontent-tjw-c3="" class="col-sm-8 col-form-label text-left ">{{ name }}</label></div>
                                     </div>
-                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail"><font _ngcontent-tjw-c3="">*</font>กิ๊บปีก:</label>
-                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><input disabled _ngcontent-tjw-c3="" class="form-control ng-untouched ng-pristine ng-valid" value="{{ reg_no }}" placeholder="กรอกกิ๊บปีก" type="text" name="reg_no"></div>
+                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail">กิ๊บปีก:</label>
+                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><label _ngcontent-tjw-c3="" class="col-sm-8 col-form-label text-left ">{{ reg_no }}</label></div>
                                     </div>
-                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail" style="padding: 0;"><font _ngcontent-tjw-c3="">*</font>เจ้าของปัจจุบัน:</label>
-                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><input disabled _ngcontent-tjw-c3="" class="form-control ng-untouched ng-pristine ng-valid" value="{{ breeder }}" placeholder="กรอกเจ้าของปัจจุบัน" type="text" name="breeder"></div>
+                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail">เจ้าของปัจจุบัน:</label>
+                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><label _ngcontent-tjw-c3="" class="col-sm-8 col-form-label text-left ">{{ farm_name }}</label></div>
                                     </div>
                                 </div>
                                 <div _ngcontent-tjw-c3="" class="col-md-3">
-                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail"><font _ngcontent-tjw-c3="">*</font>เพศ:</label>
-                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><select _ngcontent-tjw-c3="" class="form-control ng-untouched ng-pristine ng-valid" name="sex_id">
-                                            <option value="1" {% if value == 'เพศผู้' %}selected{% endif %}>เพศผู้</option>
-                                            <option value="2" {% if value == 'เพศเมีย' %}selected{% endif %}>เพศเมีย</option>
-                                        </select>
+                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail">เพศ:</label>
+                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><label _ngcontent-tjw-c3="" class="col-sm-8 col-form-label text-left">{{value}}</label>
                                     </div>
                                     </div>
-                                    <!-- <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail"><font _ngcontent-tjw-c3="">*</font>กิ๊บปีก:</label>
-                                                <div _ngcontent-tjw-c3="" class="col-sm-8"><input disabled _ngcontent-tjw-c3="" class="form-control ng-untouched ng-pristine ng-valid" value="{{ chicken_code }}" placeholder="กรอกกิ๊บปีก" type="text" name="chicken_code"></div>
+                                    <!-- <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail">กิ๊บปีก:</label>
+                                                <div _ngcontent-tjw-c3="" class="col-sm-8"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right " value="{{ chicken_code }}" placeholder="กรอกกิ๊บปีก" type="text" name="chicken_code"></div>
                                             </div> -->
                                     <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail">ผู้ปรับปรุงพันธุ์:</label>
-                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><input disabled _ngcontent-tjw-c3="" class="form-control ng-untouched ng-pristine ng-valid" value="{{ farm_name }}" placeholder="กรอกผู้ปรับปรุงพันธุ์" type="text" name="farm_name"></div>
+                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><label _ngcontent-tjw-c3="" class="col-sm-8 col-form-label text-left ">{{ breeder }}</label></div>
                                     </div>
                                 </div>
                                 <div _ngcontent-tjw-c3="" class="col-md-3">
-                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail"><font _ngcontent-tjw-c3="">*</font>วันเกิด:</label>
-                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><input disabled _ngcontent-tjw-c3="" class="form-control datepick flatpickr-input disabled ng-untouched ng-pristine ng-valid" placeholder="กรอกชื่อวันเกิด" type="text" readonly="readonly" id="birthday" name="birthday"></div>
+                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail">วันเกิด:</label>
+                                        <div _ngcontent-tjw-c3="" class="col-sm-8"><input disabled _ngcontent-tjw-c3="" class="form-control datepick flatpickr-input disabled ng-untouched ng-pristine ng-valid" placeholder="กรอกชื่อวันเกิด" type="text" readonly="readonly" id="birthday" name="birthday" value='{{birthday}}'></div>
                                     </div>
-                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail"><font _ngcontent-tjw-c3="">*</font>วันออกใบพันธุ์ประวัติ:</label>
+                                    <div _ngcontent-tjw-c3="" class="form-group row"><label _ngcontent-tjw-c3="" class="col-sm-4 col-form-label text-right" for="staticEmail">วันออกใบพันธุ์ประวัติ:</label>
                                         <div _ngcontent-tjw-c3="" class="col-sm-8"><input disabled _ngcontent-tjw-c3="" class="form-control datepick flatpickr-input disabled ng-untouched ng-pristine ng-valid" value="{{ certificste_issued }}" placeholder="กรอกวันออกใบพันธุ์ประวัติ" type="text" readonly="readonly"id="certificste_issued" name="certificste_issued"></div>
                                     </div>
                                 </div>
@@ -498,11 +495,6 @@
     </div>
 </form>
 </div>
-<script type="application/json" id="image_dict">{{ image_dict|safe }}</script>
-<script type="application/json" id="reg_no_dict">{{ reg_no_dict|safe }}</script>
-<script type="application/json" id="name_dict">{{ name_dict|safe }}</script>
-<script type="application/json" id="f_id">{{ f_id|safe }}</script>
-<script type="application/json" id="m_id">{{ m_id|safe }}</script>
 <script>
     config1 = 
     {
@@ -522,89 +514,4 @@
     flatpickr("#certificste_issued", config2);
 
 </script>
-<script>
-    var clearButtons = document.querySelectorAll("button[id*='_del']");
-
-    // add an event listener to each button
-    clearButtons.forEach(function(button) {
-    button.addEventListener("click", function() {
-        // get the file input disabled element associated with this button
-        var fileId = button.id.replace("_del", "_file");
-        var imgfileId = button.id.replace("_del", "_image");
-        var fileinput disabled = document.getElementById(fileId);
-        var imageinput disabled = document.getElementById(imgfileId);
-
-        // clear the file input disabled
-        fileinput disabled.value = "";
-        imageinput disabled.src = "/media/default.png";
-    });
-    });
-</script>
-<script>
-    var image_dict = JSON.parse(document.getElementById('image_dict').textContent);
-var reg_no_dict = JSON.parse(document.getElementById('reg_no_dict').textContent);
-var name_dict = JSON.parse(document.getElementById('name_dict').textContent);
-var f_id = JSON.parse(document.getElementById('f_id').textContent);
-var m_id = JSON.parse(document.getElementById('m_id').textContent);
-
-$(document).ready(function() {
-  $('input disabled[id^="f"], input disabled[id^="m"]').on('input disabled', function() {
-    var input disabledId = this.id;
-    var regNo = $('#' + input disabledId.replace(/_reg_no|_name/, '') + '_reg_no').val();
-    var name = $('#' + input disabledId.replace(/_name|_reg_no/, '') + '_name').val();
-    var value = null;
-    // Look up the value in the appropriate dictionary based on the input disabled ID
-    if (input disabledId.indexOf('reg_no') !== -1) {
-        // 'reg_no' is in the input disabledId
-        selectedOption = $('#' + input disabledId.replace(/_reg_no|_name/, '') + '_reg_no' + '_list option[value="' + regNo + '"]');
-      } else {
-        // 'reg_no' is not in the input disabledId
-        selectedOption = $('#' + input disabledId.replace(/_name|_reg_no/, '') + '_name' + '_list option[value="' + name + '"]');
-      }
-    value = selectedOption.data('value');
-    // Update the appropriate input disabled fields based on the looked-up value
-    if (value) {
-      $('#' + input disabledId.replace(/_name|_reg_no/, '') + '_image').attr('src', image_dict[value] || '/media/default.png');
-      $('#' + input disabledId.replace(/_name|_reg_no/, '') + '_reg_no').val(reg_no_dict[value] || '-');
-      $('#' + input disabledId.replace(/_name|_reg_no/, '') + '_name').val(name_dict[value] || '-');
-
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'f' + '_image').attr('src', image_dict[f_id[value]] || '/media/default.png');
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'f' + '_reg_no').val(reg_no_dict[f_id[value]] || '-');
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'f' + '_name').val(name_dict[f_id[value]] || '-');
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'm'+ '_image').attr('src', image_dict[m_id[value]] || '/media/default.png');
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'm'+ '_reg_no').val(reg_no_dict[m_id[value]] || '-');
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'm'+ '_name').val(name_dict[m_id[value]] || '-');
-
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'ff' + '_image').attr('src', image_dict[f_id[f_id[value]]] || '/media/default.png');
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'ff' + '_reg_no').val(reg_no_dict[f_id[f_id[value]]] || '-');
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'ff' + '_name').val(name_dict[f_id[f_id[value]]] || '-');
-
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'fm' + '_image').attr('src', image_dict[m_id[f_id[value]]] || '/media/default.png');
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'fm' + '_reg_no').val(reg_no_dict[m_id[f_id[value]]] || '-');
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'fm' + '_name').val(name_dict[m_id[f_id[value]]] || '-');
-
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'mf'+ '_image').attr('src', image_dict[f_id[m_id[value]]] || '/media/default.png');
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'mf'+ '_reg_no').val(reg_no_dict[f_id[m_id[value]]] || '-');
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'mf'+ '_name').val(name_dict[f_id[m_id[value]]] || '-');
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'mm'+ '_image').attr('src', image_dict[m_id[m_id[value]]] || '/media/default.png');
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'mm'+ '_reg_no').val(reg_no_dict[m_id[m_id[value]]] || '-');
-      $('#' + input disabledId.replace(/_name|_reg_no/, '')  + 'mm'+ '_name').val(name_dict[m_id[m_id[value]]] || '-');
-
-    }
-  });
-});
-  </script>
-  <script>
-    function readURL(input disabled) {
-  if (input disabled.files && input disabled.files[0]) {
-    var reader = new FileReader();
-
-    reader.onload = function (e) {
-      $('#'+ input disabled.id.replace(/_file|_reg_no/, '') + '_image').attr('src', e.target.result).width(150).height(200);
-    };
-
-    reader.readAsDataURL(input disabled.files[0]);
-  }
-}
-  </script>
 {% endblock content %}
